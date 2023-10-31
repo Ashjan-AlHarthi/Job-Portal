@@ -1,0 +1,70 @@
+<nav class="navbar">
+    <div class="container-fluid">
+
+        <h1>Job<span style="color: blue;">Portal</span></h1>
+        <form class="d-flex" role="search">
+            <p-button label="Login" [link]="true" class="loin" (click)="showDialog2()"></p-button>&nbsp;&nbsp;
+
+            <input class="form-control me-2 search" type="search" placeholder="Search for a job" aria-label="Search">
+            <button type="submit" class="searchBttn"><span class="pi pi-search"></span></button>
+        </form>
+    </div>
+</nav>
+
+<div class="text">
+    <h1>Make Your Career A Success By Finding <br>The Right Job</h1>
+    <h6>Join our Job Portal and fast-track your job search. Access to meaningful jobs <br>that matches your skills,
+        experience and location.</h6>
+
+    <button (click)="showDialog()" class="reg">Register Now</button>
+</div>
+
+<p-dialog [(visible)]="visible">
+
+
+    <div class="main">
+        <input type="checkbox" id="chk" aria-hidden="true">
+
+        <div class="signup">
+            <form>
+                <label for="chk" aria-hidden="true">Sign up</label>
+                <input type="text" name="txt" placeholder="User name" [(ngModel)]="signupObj.userName">
+                <input type="email" name="email" placeholder="Email" [(ngModel)]="signupObj.email">
+                <input type="password" name="pswd" placeholder="Password" [(ngModel)]="signupObj.password">
+                <button (click)="onSignup()" class="button">Sign up</button>
+            </form>
+            <p class="acc"><span style="text-decoration: underline;">Already have account?</span> Login <i
+                    class="pi pi-arrow-circle-down" style="font-size: 0.6rem"></i></p>
+        </div>
+
+
+        <div class="login">
+            <form>
+
+                <label for="chk" aria-hidden="true"> Login</label>
+                <input type="text" name="txt" placeholder="User name" [(ngModel)]="loginpObj.userName">
+                <input type="password" name="pswd" placeholder="Password" [(ngModel)]="loginpObj.password">
+                <button (click)="onLogin()" class="button">Login</button>
+            </form>
+        </div>
+    </div>
+
+</p-dialog>
+
+<p-dialog [(visible)]="signin">
+
+
+    <div class="main">
+
+        <div>
+            <form>
+
+                <label> Login</label>
+                <input type="text" name="txt" placeholder="User name" [(ngModel)]="loginpObj.userName">
+                <input type="password" name="pswd" placeholder="Password" [(ngModel)]="loginpObj.password">
+                <button (click)="onLogin()" class="button">Login</button>
+            </form>
+        </div>
+    </div>
+
+</p-dialog>
